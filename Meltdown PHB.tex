@@ -1,0 +1,116 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper, top=3cm, bottom=2cm, left=3cm, right=3cm, marginparwidth=2cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{ {./pic/} }
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+% added by me
+%% Multiple columns
+\usepackage{multicol}
+%% Pretty Tables
+\usepackage{booktabs}
+%% Extended column definitions
+\usepackage{array}
+%% Full Page Graphics
+\usepackage{pdfpages}
+%% No separation between elements of lists
+\usepackage{enumitem}
+\setlist{nosep}
+%% Include links to websites
+\usepackage{hyperref}
+%% Generate the degree symbol
+\usepackage{gensymb}
+%% Drawing connections between nodes of graph
+\usepackage{tikz}
+\usetikzlibrary{angles, quotes}
+%% Multi-line comments
+\usepackage{verbatim}
+
+% Dashes not dots
+\renewcommand\labelitemi{---}
+
+\title{Meltdown \\ {\large - Player Handbook -}}
+\author{Eeyle}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+A science fiction RPG where the central gameplay involves fixing things and using futuristic weaponry creatively. Players are equipped with futuristic weaponry to be used in combat. Throughout the campaign they solve several mysteries based around modern scientific research and they'll have to use their equipment in new and creative ways in noncombat engagements.
+
+%A science fiction RPG centered around realistic space combat, except that the players hardly participate in the combat itself at all. The campaign seeks to answer how it would feel to really be on a spaceship that was falling apart, and what this kind of intense and dangerous situation can drive people to do. Instead of leading the combat, the players will witness their ship breaking down around them as shots fly and engines roar. The players must understand their particular systems of the ship well enough to identify any problems, come up with solutions to them, and then fix those problems. The players will not be valiant heroes nor mystery investigators, instead they will be average mechanics, plumbers, and pilots who are forced to fix extreme problems, in complicated subsystems, under dangerous circumstances.
+
+\end{abstract}
+
+{
+  \hypersetup{linkcolor=black}
+  \setcounter{tocdepth}{2}
+  \tableofcontents
+}
+
+\section{Preface} \label{preface}
+
+\subsection{Notation} \label{preface_notation}
+Typical D\&D notation will be used, with some shorthand added. 
+\begin{itemize}
+\item The \textit{GM} is the game master and controls the game as a narrator.
+\item \textit{1d6} means roll one 6-sided die.
+% \item \textit{1d4 ? 1. ... 2. ... 3. ... 4. ...} means roll a 4-sided die, and if it comes up 1 then follow the sentence after 1 (whatever is in the first ellipsis), and likewise for 2, 3, and 4.
+\end{itemize}
+
+% This is a general form to create dice outcome charts. Its first argument should be the dice used. The next two arguments form a pair, the first being which die outcomes and the second what happens on those outcomes. Each two arguments after that are optional, and form pairs, so that up to four ranges of die outcomes can be represented.
+% For example, #1 could be 1d12. #2 and #3 say 1-4. Something happens. Then #4 and #5 say 5-6. Something else happens. Then #6 and #7 say 7-12. A third different thing happens. #8 and #9 are left blank. This gives three die ranges and three outcomes, depending on what you roll on 1d12.
+\def\qeq#1#2#3#4#5#6#7#8#9{#1 ? 
+\vspace*{-0.4cm} \begin{enumerate}[leftmargin=2cm]
+\item [#2] #3 
+
+\if#4% empty
+\else
+\item [#4] #5
+\fi
+
+\if#6% empty
+\else
+\item [#6] #7
+\fi
+
+\if#8% empty
+\else
+\item [#8] #9
+\fi
+\end{enumerate}}
+
+% The physical and heating damage outcomes.
+\def\pbhw#1#2{
+\begin{tabular}[t]{r p{14cm}}
+\textit{Physical} - & #1 \\
+\textit{Heating} - & #2 \\
+\end{tabular}}
+
+\section{Scores and Skills}
+
+\section{Background}
+
+\section{Arcmage}
+
+\section{Lumineer}
+
+\section{Mech}
+
+\section{Rocketeer}
+
+\end{document}

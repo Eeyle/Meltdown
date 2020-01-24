@@ -1,0 +1,22 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Preface}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Notation}{1}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Campaign}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Fusion Reactor}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Quantum Computer}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Gravitational Wave Interferometer}{2}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Neutrino Detector}{2}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Radiotelescope Array}{2}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Particle Accelerator}{2}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Engagements}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Outside station chasing on foot}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Inside station being chased on foot}{2}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Space chasing in fighters}{2}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Ground chasing in large vehicle}{2}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Ground being chased in small vehicles}{2}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Space being chased in large ship}{2}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Combats}{2}{section.4}%
+\contentsline {section}{\numberline {5}Locations}{2}{section.5}%
+\contentsline {subsection}{\numberline {5.1}The Magnificent Station above Earth}{2}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}The Children about Jupiter}{2}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}The Settlement of Mars}{2}{subsection.5.3}%
