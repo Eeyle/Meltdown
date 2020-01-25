@@ -40,6 +40,9 @@
 % Dashes not dots
 \renewcommand\labelitemi{---}
 
+% No paragraph indents
+\setlength\parindent{0pt}
+
 \title{Meltdown \\ {\large - Player Handbook -}}
 \author{Eeyle}
 \date{}
@@ -94,8 +97,10 @@ Typical D\&D notation will be used, with some shorthand added.
 \fi
 \end{enumerate}}
 
+\def\d6#1#2#3#4#5#6#7#8{\qeq{1d6}{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}}
+
 % The physical and heating damage outcomes.
-\def\pbhw#1#2{
+\def\ph#1#2{
 \begin{tabular}[t]{r p{14cm}}
 \textit{Physical} - & #1 \\
 \textit{Heating} - & #2 \\
@@ -105,7 +110,230 @@ Typical D\&D notation will be used, with some shorthand added.
 
 \section{Background}
 
-\section{Arcmage}
+
+
+
+
+
+
+
+
+
+
+\section{Arcmage} \label{arcmage}
+
+\subsection{Weaponry} 
+
+An Arcmage's main weapon is a Tesla coil. At the expense of weak currents, Tesla coils generate voltages large enough to break down air. The air is ionized which cascades into more ionization and breaking down, and the free electrons allow the passage of electricity right through the air itself. 
+\\ \\
+The informatory tables below detail the exact physical capabilities of the weapon. For a description of how the weapon behaves in combat, see section \ref{arcmage_combat_attacking}. 
+
+\vspace{0.5cm}
+\begin{minipage}[t]{0.45\linewidth}
+\begin{tabular}[t]{| p{6cm} |}
+\toprule
+\multicolumn{1}{| c |}{Specifications} \\
+\midrule 
+Voltage \textit{V} - The breakdown of air begins when electrons are pushed into it hard enough. Voltage measures this push of electrons. The dielectric strength of air is the voltage required per unit of distance the spark needs to travel. The maximum voltage an Arcmage's coil can create is 10 MV. \\
+\\
+\begin{tabular}{r l}
+dielectric strength of air & 3 MV/m \\
+vacuum & 20+ MV/m \\
+water & 65+ MV/m \\
+\end{tabular}
+\\
+\hspace{0.2cm} max voltage 10 MV (10000 V) \\
+\\
+Power \textit{P} - Ideally the electric arc will hit the target's skin, but most soldiers carry some form of metal to draw it away. All damage dealt by the coil is therefore heating damage, and to determine how hot a substance gets as a result one must know the energy. The power of the coil is the amount of energy sent out per second. The coil is designed to output just enough power to melt any bullets shot at the Arcmage. \\
+\\
+\hspace{0.2cm} max power 10 MW (10000 J/s) \\
+\\
+Power and Voltage are related by the equation \\
+\hspace{0.2cm} P = IV \\
+where I is the current in Amperes. \\
+
+\bottomrule
+\end{tabular}
+\end{minipage}
+\begin{minipage}[t]{0.45\linewidth}
+\begin{tabular}[t]{| p{6cm} |}
+\toprule
+\multicolumn{1}{| c |}{Components} \\
+\midrule
+Capacitors - A capacitor stores electric charge for a short amount of time. Once enough charge has built up, it is all released at once over a spark gap to power the attack. A few capacitors are built into the bottom of the weapon's handle, charging from the reactor via wiring. \\
+\\
+Transformer Coils - Once a large amount of electrical charge is rushing into the weapon, a set of transformer coils steps the voltage up to a much higher value. Above the weapon's handle, a small coil is held inside of a larger coil. The difference in the number of windings determines how much the voltage will rise, so the outer coil is long and constitutes most of the weapon's handle. \\ 
+\\
+Resonance Circuits - Both coils have capacitors in circuit with them. As electric current passes through the coils, a certain amount of energy is stored in the magnetic fields generated. Energy bounces between being stored in the capacitors and the magnetic fields, vibrating in a resonance that is tuned to the ideal frequency. The back and forth passage of energy means that the spark does not happen all at once, but in many imperceptibly-small bursts. \\ 
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\subsection{Equipment}
+
+An Arcmage carries around a large amount of additional equipment just to be able to use their weaponry. The Tesla coil takes huge amounts of electrical energy to use, and it generates a large amount of heat too as a result. 
+\\ \\
+Whenever an Arcmage is hit in combat, determine the component of equipment that is hit. If the Arcmage's robes are unbroken, then the attack always hits the robes. If it is a random hit, then determine the system hit and roll on that table. To roll on a table, look at the size column and determine which die you need to roll, usually a d6. The rolled component is the component whose size range matches the outcome of the die. 
+\\ \\ 
+The component that is hit takes either heating or physical damage. The component can take a maximum amount of either heating or physical damage before it breaks as shown in the tables below. Every turn some heat flows out of a component that has taken heat damage (see table \ref{table:arcmage_fluidflow}). Whenever physical damage is dealt to a component, subtract the component's damage reduction (DR) from the damage taken.
+
+\hspace{-0.6cm} \begin{tabular}[t]{|l c c c c|}
+\toprule
+\multicolumn{5}{|c|}{Table \ref{arcmage}.1 - Electrical System} \\
+\midrule
+Component & Size & Max Heat & Max Phys & DR \\
+\midrule
+Coil & 1-3 & 16 & 16 & 1 \\
+Wiring & 4-5 & 8 & 1 & 3 \\
+Reactor & 6 & 24 & 20 & 2 \\
+Robes & - & 16 & 12 & 1 \\
+\bottomrule
+\end{tabular} \label{table:arcmage_electrical}
+\begin{tabular}[t]{|l c c c c|}
+\toprule
+\multicolumn{5}{|c|}{Table \ref{arcmage}.2 - Thermal System} \\
+\midrule
+Component & Size & Max Heat & Max Phys & DR \\
+\midrule
+Tank & 1-2 & 12 & 12 & 1 \\
+Radiator & 3 & 24 & 20 & 2 \\
+Pipes & 4-5 & 8 & 1 & 4 \\
+Pump & 6 & 10 & 1 & 4 \\
+\bottomrule
+\end{tabular} \label{table:arcmage_thermal}
+
+\vspace{0.5cm}
+\begin{tabular}{|l c|}
+\toprule
+\multicolumn{2}{|c|}{Table \ref{arcmage}.3 - Thermal Fluid and Flow Rates} \\
+\midrule
+Total Thermal Fluid & 5 L \\
+Minimum Thermal Fluid & 3 L \\
+\midrule
+Coil Heat Flow & -3 per turn \\
+Robes Heat Flow & -2 per turn \\
+All Other Heat Flow & -1 per turn \\
+\bottomrule
+\end{tabular} \label{table:arcmage_fluidflow}
+
+\subsubsection{Energy}
+
+\texttt{Tesla Coil} - Your Tesla coil can be hit during combat. Any heat damage dealt will be added to its heat value just like your attacks. 
+
+\ph
+{The weapon is bent out of shape either in the handle or head. \newline
+\d6{1-3}{The head is severely dented, reducing range by 1.}{4-6}{The handle is bent, fusing the two transformer coils and causing a short circuit which adds 1d6 heat per turn.}{}{}{}{}}
+{\d6{1-3}{The wiring of the coil melts from the heat. Somewhere in a coil two wires have fused and add 1 heat per turn and reducing damage by 1.}{4-5}{The handle becomes so hot it sears your hands, stopping an attack this turn.}{6}{A capacitor is fried and power output and all damage is halved.}{}{}}
+
+\texttt{Wiring} - Many redundant heavy-duty wires connect the reactor to the Tesla coil. 
+
+\ph
+{The wiring is ripped out and must be plugged back, taking an action. Some may be destroyed.}
+{A few wires fry and must be quickly replaced or else face a huge sparking hazard. The sparks will deal d6s of heat to your other components, and replacing them takes an action.}
+\\ \\
+\texttt{Reactor} - In the heart of your chest plate is a hyper-miniaturized nuclear fission reactor. Should this break under any condition, its failure will be entirely contained and no nuclear disaster will occur. However, all power will be lost in your equipment and weaponry. 
+\\ \\
+\texttt{Robes} - The Arcmage is draped in heavy, layered robes which serves multiple purposes. The outer later is composed of finely woven strands of aluminum which absorb the shocks of other Arcmages and reflect the lasers of Lumineers rather well. Below that a layer of water circulates and percolates to the surface; any heat absorbed by the aluminum is distributed to the water, often as huge puffs of steam. The bottom layer is an insulating layer of kevlar for impact resistance and heat avoidance.
+
+\ph
+{Your robes are ripped apart. Shocks, lasers, and other attacks are able to get through and hit other components. You lose 1 thermal fluid per turn until repaired. }
+{Your robes can't withstand the heat any longer. All heat has evaporated and the aluminum is at its saturation point, so any further heat damage can then penetrate into other components. The strength of the aluminum is compromised meaning physical attacks can penetrate as well.}
+
+
+\subsubsection{Heating}
+
+\texttt{Tank} - The Arcmage's water tank must be thin enough to fit beneath heavy robes. A thin and flexible pouch extends down your back, from which you can also handily drink sips of water through a drinking tube.
+
+\ph
+{The tank is squeezed by the damage, causing a rupture where it leaves the tank. Lose 1 thermal fluid per turn until fixed.}
+{The heat damages the rubber. While the heat may be absorbed by the water in the tank, it may cause a leakage at a seal. 1d6 ? 4-6 A leakage occurs, lose 1 thermal fluid per turn.}
+\\ \\
+\texttt{Radiator} - While an Arcmage can get away with relying on only evaporative and convective cooling in atmosphere, they need a radiator for any space-based ventures. The radiator is a small self-contained device that heats up a filament to absurd temperatures, dumping heat into it to be radiated away.
+
+\ph
+{The radiator casing is dented, causing the filament to get way to close to the casing or even touch it. The outer shell of the radiator heats up significantly, causing 1d6 heat damage to a random component every turn.}
+{The radiator is saturated with heat and cannot dispel it as effectively. The backup of the thermal system causes 1d6 heat damage to a random component every turn.}
+
+\textit{Pipes} - A few stray pipes pump water into the sieves and chambers of the robes, as well as funnel it back into the tank.
+
+\ph
+{Too much heat and a pipe will lose its seal at the seams. Lose 1 fluid per turn.}
+{While the pipes are made of plastic and are bendable, too much of a sudden force can rip them out of the their seals. Lose 1 fluid per turn.}
+
+\texttt{Pump} - A pump keeps water circulating throughout the thermal system. 
+
+\ph
+{\d6{1-4}{The blades of the pump warp out of shape. All heat flow rates are set to 1.}{5-6}{The wiring of the pump motor is fried, totally stopping the thermal system.}{}{}{}{}}
+{The casing of the pump is dented, grinding the pump to a halt and stopping the thermal system.}
+
+\subsection{Combat} \label{arcmage_combat}
+
+Every turn, your electrical system generates energy and your thermal system gets rid of heat. Each turn do the following:
+
+\begin{itemize}
+\item The Tesla coil requires that both the reactor and wiring are functional. The reactor additionally powers the thermal pump and radiator.
+\item If the thermal system is flowing and your current thermal fluid is greater than or equal to your minimum thermal fluid, then remove -3 heat from the coil and -2 heat from the robes. All other systems remove -1 heat per turn. If your current thermal fluid is less than your minimum thermal fluid, then only remove -1 heat per turn from all components instead. If the thermal system is not flowing, then no heat is removed from any component.
+\end{itemize}
+
+You have access to a main action and a movement every turn. Your main action can be two attacks, repairing a single component, or some other action that takes up the majority of your effort. Your movement can be done at any time and may be split between events during your action, as long as you move less than or equal to 3 meters per turn.
+
+\subsubsection{Attacking} \label{arcmage_combat_attacking}
+
+2 attacks per turn. 
+
+When you attack, choose a target you can see within 3 meters. Given that electricity always finds a path, your attack always hits the target. The attack hits a random component of theirs, dealing 1d4 heat damage. This damage is the initial damage. Add this initial damage to the heat of your Tesla coil.
+
+\hspace{0.5cm} Once the attack hits the main target, it can leap to any number of other targets afterwards. It always leaps to the closest target. Every leap the attack loses one damage and one range, meaning after the first leap it deals the initial damage minus one and can only leap a distance equal to the original maximum range minus one meter. Each attack can only hit a target once.
+
+\hspace{0.5cm} Instead of an attack, you may throw a \textit{relay} to a place within six meters. A relay remains on the tile it is thrown on. Your attack can leap to a relay instead of an enemy during any part of its path, in which case that leap does not cause it to lose one damage nor one range. 
+
+\hspace{0.5cm} You may \textit{ready} an attack instead of making it immediately. Readied attacks can hit railgun shots, reducing their accuracy by 50\%. Readied attacks can also destroy incoming rockets, should the rocket take enough damage.
+
+\subsubsection{Defending}
+
+Whenever you take any form of damage, your robes are there to protect you first. Robes prevent \textit{any} other component from being hit until they take enough heating or physical damage to exceed their maximum. 
+\\ \\ 
+At any point, you can expend one thermal fluid to force heat to evaporate out of the robes, halving their current heat value.
+
+
+\newpage
+
+\begin{tabular}{|l l l l|}
+\toprule
+\multicolumn{4}{|c|}{Table \ref{arcmage}.4 - Arcmage Combat Tracker} \\
+\midrule
+Strength & \hspace{1cm} ( \hspace{0.5cm} ) & Plumbing & \hspace{1cm} ( \hspace{0.5cm} ) \\
+Precision & \hspace{1cm} ( \hspace{0.5cm} ) & Electrical & \hspace{1cm} ( \hspace{0.5cm} ) \\ 
+Reflex & \hspace{1cm} ( \hspace{0.5cm} ) & Construction & \hspace{1cm} ( \hspace{0.5cm} ) \\
+Constitution & \hspace{1cm} ( \hspace{0.5cm} ) & Computing & \hspace{1cm} ( \hspace{0.5cm} ) \\
+%\bottomrule
+\end{tabular}
+
+\begin{tabular}{|l l l l l l|}
+\midrule
+Thermal Fluid & \hspace{1cm} / 5 & minimum & 3 & & \\
+\midrule
+& Size & Heat Dmg & Heat Flow & Phys Dmg & DR \\
+\midrule
+Coil & 1-3 & \hspace{1cm} / 16 & -3 & \hspace{1cm} / 16 & 1 \\
+Robes & - & \hspace{1cm} / 16 & -2 & \hspace{1cm} / 12 & 1 \\
+Wiring & 4-5 & \hspace{1cm} / 8 & -1 & \hspace{1cm} / 1 & 3 \\
+Reactor & 6 & \hspace{1cm} / 24 & -1 & \hspace{1cm} / 20 & 2 \\
+\midrule
+Tank & 1-2 & \hspace{1cm} / 12 & -1 & \hspace{1cm} / 12 & 1 \\
+Pipes & 3-4 & \hspace{1cm} / 8 & -1 & \hspace{1cm} / 1 & 4 \\
+Pump & 5 & \hspace{1cm} / 10 & -1 & \hspace{1cm} / 1 & 4 \\
+Radiator & 6 & \hspace{1cm} / 24 & -1 & \hspace{1cm} / 20 & 2 \\
+\bottomrule
+\end{tabular} \label{table:arcmage_sheet}
+
+
+
+
+
+
+
+
 
 \section{Lumineer}
 
